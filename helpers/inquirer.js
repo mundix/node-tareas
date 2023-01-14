@@ -1,5 +1,6 @@
-const inquirer = require('inquirer');
-require('colors');
+// const inquirer = require('inquirer');
+import inquirer from 'inquirer';
+import colors from 'colors';
 
 const preguntas = [
    {
@@ -20,6 +21,4 @@ const inquirerMenu = async () => {
    return opt;
 }
 
-module.exports = {
-   inquirerMenu
-}
+export { inquirerMenu };

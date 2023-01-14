@@ -1,5 +1,5 @@
-const { inquirerMenu } = require('./helpers/inquirer');
-require('colors');
+import { inquirerMenu } from './helpers/inquirer.js';
+
 console.clear();
 
 const main = async () => {
