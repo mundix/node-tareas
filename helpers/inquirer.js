@@ -59,11 +59,30 @@ const pausa = async () => {
          type: 'input',
          name: 'valor',
          message: `Presione ${'ENTER'.green} para continuar:`,
-       },
+      },
    ];
 
    const { valor } = await inquirer.prompt(entrada);
    return valor;
 }
 
-export { inquirerMenu, pausa };
+const leerInput = async (message) => {
+   const question = [
+      {
+         type: 'input',
+         name: 'desc',
+         message,
+         validate(value) {
+            if (value.length === 0) {
+               return 'Por favor ingrese un valor';
+            }
+            return true;
+         }
+      }
+   ]
+
+   const { desc } = await inquirer.prompt(question);
+   return desc;
+}
+
+export { inquirerMenu, pausa, leerInput };

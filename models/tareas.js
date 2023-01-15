@@ -1,7 +1,6 @@
-import { Tarea } from "./tarea";
+import { Tarea } from "./tarea.js";
 
-
-class Tareas  {
+class Tareas {
 
    _listado = {};
 
