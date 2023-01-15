@@ -6,11 +6,13 @@ console.clear();
 const main = async () => {
 
   let opt = '';
-  
+  const tareas = new Tareas();
+
+
   do {
 
-    //  opt = await inquirerMenu();
-    //  console.log({opt});
+     opt = await inquirerMenu();
+     console.log({opt});
     
 
     await pausa();
