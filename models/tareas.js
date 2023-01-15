@@ -20,8 +20,12 @@ class Tareas {
    }
 
    cargarTareasFromArray( tareas = []) {
-      Object.keys(tareas).forEach( key => {
-         this._listado[key] = tareas[key];
+      // Object.keys(tareas).forEach( key => {
+      //    this._listado[key] = tareas[key];
+      // })
+      //Otra forma que funcinoa igual
+      tareas.forEach(  tarea => {
+         this._listado[tarea.id] = tarea;
       })
    }
 
