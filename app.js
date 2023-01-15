@@ -1,4 +1,4 @@
-import { guardarDB } from './helpers/guardarArchivo.js';
+import { guardarDB, leerDB } from './helpers/guardarArchivo.js';
 import { inquirerMenu, leerInput, pausa } from './helpers/inquirer.js';
 import { Tareas } from './models/tareas.js';
 
@@ -8,29 +8,35 @@ const main = async () => {
 
   let opt = '';
   const tareas = new Tareas();
+  const tareasDB = leerDB();
 
+  if (tareasDB) {
+    // Establecer tareas
+  }
+
+  await pausa();
 
   do {
     // Imprimir el menu
-     opt = await inquirerMenu();
+    opt = await inquirerMenu();
 
-     switch (opt) {
+    switch (opt) {
       case '1':
         //crear opcion
         const desc = await leerInput('Descripción: ');
         tareas.crearTarea(desc);
         break;
-     
+
       case '2':
         console.log(tareas.listadoArr);
         break;
-     
+
       default:
         break;
-     }
+    }
 
-     //puedo grabar el arreglo , como tambien el _list de objeto
-     guardarDB(tareas.listadoArr);
+    //puedo grabar el arreglo , como tambien el _list de objeto
+    guardarDB(tareas.listadoArr);
 
 
     await pausa();
