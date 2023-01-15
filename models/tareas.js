@@ -34,7 +34,7 @@ class Tareas {
       const tarea = new Tarea(desc);
       this._listado[tarea.id] = tarea;
    }
-
+  
 
    listadoCompleto() {
       Object.keys(this._listado).forEach((key, index) => {
