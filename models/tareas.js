@@ -37,12 +37,36 @@ class Tareas {
   
 
    listadoCompleto() {
-      Object.keys(this._listado).forEach((key, index) => {
-         // console.log(index);
-         // console.log(this._listado[key]);
-         console.log(`${colors.green(index + 1)}. ${this._listado[key].desc} :: ${this._listado[key].completadoEn === null ? 'Pendiente'.red : 'Completado'.green}`);
+      // Object.keys(this._listado).forEach((key, index) => {
+      //    // console.log(index);
+      //    // console.log(this._listado[key]);
+      //    console.log(`${colors.green(index + 1)}. ${this._listado[key].desc} :: ${this._listado[key].completadoEn === null ? 'Pendiente'.red : 'Completado'.green}`);
 
-      });
+      // });
+      this.listadoArr.forEach( (tarea, i) => {
+         const idx = `${i+1}.`.green;
+         const desc = tarea.desc;
+         const status = tarea.completadoEn === null ? 'Pendiente'.red : 'Completado' .green;
+
+         console.log(`${idx} ${desc} :: ${status}`);
+      })
+   }
+
+   listarPendientesCompletadas ( completadas = true)
+   {
+      let tareas = [];
+      if(completadas) {
+         tareas = this.listadoArr.filter( tarea => tarea.completadoEn !== null);
+      } else {
+         tareas = this.listadoArr.filter( tarea => tarea.completadoEn ===null);
+      }
+      tareas.forEach( (tarea, i) => {
+         const idx = `${i+1}.`.green;
+         const desc = tarea.desc;
+         const status = tarea.completadoEn === null ? 'Pendiente'.red : 'Completado' .green;
+
+         console.log(`${idx} ${desc} :: ${status}`);
+      })
    }
 
 }
