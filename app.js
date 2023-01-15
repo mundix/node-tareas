@@ -10,12 +10,10 @@ const main = async () => {
   const tareas = new Tareas();
   const tareasDB = leerDB();
 
-  if (tareasDB) {
-    // Establecer tareas
+  if (tareasDB) { // Cargar Tareas
     tareas.cargarTareasFromArray(tareasDB);
   }
 
-  // await pausa();
 
   do {
     // Imprimir el menu
@@ -29,7 +27,7 @@ const main = async () => {
         break;
 
       case '2':
-        console.log(tareas.listadoArr);
+        tareas.listadoCompleto()
         break;
 
       default:
