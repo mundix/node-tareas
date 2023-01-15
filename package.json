@@ -1,7 +1,7 @@
 {
   "name": "04-tareas-hacer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Menu para crear tareas.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
