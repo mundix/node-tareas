@@ -40,13 +40,7 @@ const preguntas = [
    }
 ];
 
-const entrada = [
-   {
-      type: 'input',
-      name: 'valor',
-      message: `Presione ${'ENTER'.green} para continuar:`,
-    },
-];
+
 
 const inquirerMenu = async () => {
    // console.clear();
@@ -59,6 +53,15 @@ const inquirerMenu = async () => {
 }
 
 const pausa = async () => {
+
+   const entrada = [
+      {
+         type: 'input',
+         name: 'valor',
+         message: `Presione ${'ENTER'.green} para continuar:`,
+       },
+   ];
+
    const { valor } = await inquirer.prompt(entrada);
    return valor;
 }
