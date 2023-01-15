@@ -1,3 +1,4 @@
+import { guardarDB } from './helpers/guardarArchivo.js';
 import { inquirerMenu, leerInput, pausa } from './helpers/inquirer.js';
 import { Tareas } from './models/tareas.js';
 
@@ -27,6 +28,10 @@ const main = async () => {
       default:
         break;
      }
+
+     //puedo grabar el arreglo , como tambien el _list de objeto
+     guardarDB(tareas.listadoArr);
+
 
     await pausa();
 
