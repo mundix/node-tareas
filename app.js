@@ -37,15 +37,18 @@ const main = async () => {
       case '4':
         tareas.listarPendientesCompletadas(false);
         break;
-      
-        case '6':
-          const id = await listadoTareasBorrar(tareas.listadoArr);
-          const ok  = await confirmar('Estas seguro?');
-          if(ok) {
+
+      case '6':
+        const id = await listadoTareasBorrar(tareas.listadoArr);
+        if (id !== '0') {
+
+          const ok = await confirmar('Estas seguro?');
+          if (ok) {
             tareas.borrarTarea(id);
             console.log('Tarea Borrada');
           }
-          
+        }
+
         break;
 
       default:
