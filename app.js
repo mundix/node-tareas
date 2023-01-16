@@ -1,5 +1,5 @@
 import { guardarDB, leerDB } from './helpers/guardarArchivo.js';
-import { confirmar, inquirerMenu, leerInput, listadoTareasBorrar, pausa } from './helpers/inquirer.js';
+import { confirmar, inquirerMenu, leerInput, listadoTareasBorrar, mostrarListadoChecklist, pausa } from './helpers/inquirer.js';
 import { Tareas } from './models/tareas.js';
 
 console.clear();
@@ -36,6 +36,11 @@ const main = async () => {
 
       case '4':
         tareas.listarPendientesCompletadas(false);
+        break;
+
+      case '5':
+          const ids = await mostrarListadoChecklist(tareas.listadoArr);
+          console.log({ids});
         break;
 
       case '6':
