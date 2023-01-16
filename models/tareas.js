@@ -5,6 +5,9 @@ class Tareas {
 
    _listado = {};
 
+   /**
+    * @return array []
+    */
    get listadoArr() {
       const listado = [];
 
@@ -18,6 +21,14 @@ class Tareas {
 
    constructor() {
       this._listado = {};
+   }
+
+
+   borrarTarea(id = '')
+   {
+      if(this._listado[id]) {
+         delete this._listado;
+      }
    }
 
    cargarTareasFromArray(tareas = []) {

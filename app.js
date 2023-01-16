@@ -1,5 +1,5 @@
 import { guardarDB, leerDB } from './helpers/guardarArchivo.js';
-import { inquirerMenu, leerInput, pausa } from './helpers/inquirer.js';
+import { inquirerMenu, leerInput, listadoTareasBorrar, pausa } from './helpers/inquirer.js';
 import { Tareas } from './models/tareas.js';
 
 console.clear();
@@ -36,6 +36,11 @@ const main = async () => {
 
       case '4':
         tareas.listarPendientesCompletadas(false);
+        break;
+      
+        case '6':
+          const id = await listadoTareasBorrar(tareas.listadoArr);
+          console.log(id);
         break;
 
       default:
