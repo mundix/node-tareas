@@ -24,10 +24,10 @@ class Tareas {
    }
 
 
-   borrarTarea(id = '')
-   {
+   borrarTarea(id = ''){
+
       if(this._listado[id]) {
-         delete this._listado;
+         delete this._listado[id];
       }
    }
 

@@ -1,5 +1,5 @@
 import { guardarDB, leerDB } from './helpers/guardarArchivo.js';
-import { inquirerMenu, leerInput, listadoTareasBorrar, pausa } from './helpers/inquirer.js';
+import { confirmar, inquirerMenu, leerInput, listadoTareasBorrar, pausa } from './helpers/inquirer.js';
 import { Tareas } from './models/tareas.js';
 
 console.clear();
@@ -40,7 +40,12 @@ const main = async () => {
       
         case '6':
           const id = await listadoTareasBorrar(tareas.listadoArr);
-          console.log(id);
+          const ok  = await confirmar('Estas seguro?');
+          if(ok) {
+            tareas.borrarTarea(id);
+            console.log('Tarea Borrada');
+          }
+          
         break;
 
       default:
