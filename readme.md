@@ -1,2 +1,4 @@
 # Para correrlo app menu de tareas.
--- $ node app
+
+Install: $ npm install
+To RUN: $ node app
